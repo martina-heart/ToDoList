@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title></title>
@@ -21,97 +21,133 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
 
     <meta name="theme-color" content="#fafafa" />
   </head>
-
   <body>
-    <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="row">
-        <div class="col mx-auto col-md-8 mt-3 text-center">
-          <!-- form -->
-          <form id="todos-form" class="my-3">
-            <h3 class="text-capitalize mb-4">My to do list</h3>
-            <div id="feedback" class="alert alert-danger" role="alert">
-              Please insert a valid item!
+    <!--filter buttons -->
+    <div class="row">
+      <div
+        class="col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap"
+      >
+        <a
+          href="#"
+          class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
+          data-filter="all"
+        >
+          all</a
+        >
+        <a
+          href="#"
+          class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
+          data-filter="countries"
+          >countries</a
+        >
+      </div>
+    </div>
+    <!-- search box -->
+    <div class="row">
+      <div class="col-10 mx-auto col-md-6">
+        <form>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text search-box" id="search-icon"
+                ><i class="fas fa-search"></i
+              ></span>
             </div>
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control text-capitalize"
-                id="item-input"
-                placeholder="what do you need to do..."
-              />
-              <div class="input-group-append">
-                <button class="btn btn-primary text-capitalize" type="submit">
-                  add item
-                </button>
-              </div>
-            </div>
-          </form>
-          <div class="item-container">
-            <!-- end of form  -->
-            <div id="item-list" class="item-list my-5">
-              <!-- single item -->
-              <div class="item my-3">
-                <h5 class="item-name text-capitalize">write my JS homework</h5>
-                <div class="item-icons">
-                  <button class="complete-btn">Complete</button>
-                  <button class="edit-btn">Edit</button>
-                  <button class="delete-btn">Delete</button>
-                </div>
-              </div>
-              <!-- end of single item -->
-              <!-- single item -->
-              <div class="item my-3">
-                <h5 class="item-name text-capitalize">write my JS homework</h5>
-                <div class="item-icons">
-                  <button class="complete-btn">Complete</button>
-                  <button class="edit-btn">Edit</button>
-                  <button class="delete-btn">Delete</button>
-                </div>
-              </div>
-              <!-- end of single item -->
-              <!-- single item -->
-              <div class="item my-3">
-                <h5 class="item-name text-capitalize">write my JS homework</h5>
-                <div class="item-icons">
-                  <button class="complete-btn">Complete</button>
-                  <button class="edit-btn">Edit</button>
-                  <button class="delete-btn">Delete</button>
-                </div>
-              </div>
-              <!-- end of single item -->
-            </div>
-            <button
-              type="button"
-              class="btn btn-primary my-3 text-capitalize"
-              id="clear-list"
-            >
-              clear items
-            </button>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="item...."
+              id="search-item"
+            />
           </div>
+        </form>
+      </div>
+    </div>
+    <!--end of filter buttons -->
+    <div class="row" class="store-items" id="store-items">
+      <!-- single item -->
+      <div
+        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item countries"
+        data-item="countries"
+      >
+        <div class="card">
+          <div class="img-container">
+            <img
+              src="./img/berlin2.jpg"
+              class="card-img-top store-img"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- end of card-->
+      </div>
+      <!--end of single store item-->
+      <!-- single item -->
+      <div
+        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item countries"
+        data-item="countries"
+      >
+        <div class="card">
+          <div class="img-container">
+            <img
+              src="./img/nitherland.jpg"
+              class="card-img-top store-img"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- end of card-->
+      </div>
+      <!--end of single store item-->
+      <!-- single item -->
+      <div
+        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item countries"
+        data-item="countries"
+      >
+        <div class="card">
+          <div class="img-container">
+            <img src="./img/paris.jpg" class="card-img-top store-img" alt="" />
+          </div>
+        </div>
+        <!-- end of card-->
+      </div>
+      <!--end of single store item-->
+      <!-- single item -->
+      <div
+        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item countries"
+        data-item="countries-4"
+      >
+        <div class="card">
+          <div class="img-container">
+            <img src="./img/prague.jpg" class="card-img-top store-img" alt="" />
+          </div>
+          <div class="card-body">
+            <div
+              class="card-text d-flex justify-content-between text-capitalize"
+            >
+              <h5>Czech Republic</h5>
+            </div>
+          </div>
+        </div>
+        <!-- end of card-->
+      </div>
+      <!--end of single store item-->
+    </div>
+
+    <!-- modal-container -->
+    <div id="container-fluid" class="container-fluid">
+      <div class="row lightbox-container align-items-center">
+        <div class="col-10 col-md-10 mx-auto text-right lightbox-holder">
+          <span class="lightbox-close">&times;</span>
+          <div class="lightbox-item"></div>
+          <span class="lightbox-control btnLeft"></span>
+          <span class="lightbox-control btnRight"></span>
         </div>
       </div>
     </div>
-
-    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-      window.ga = function () {
-        ga.q.push(arguments);
-      };
-      ga.q = [];
-      ga.l = +new Date();
-      ga("create", "UA-XXXXX-Y", "auto");
-      ga("set", "anonymizeIp", true);
-      ga("set", "transport", "beacon");
-      ga("send", "pageview");
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script src="./js/main-gallery.js"></script>
   </body>
 </html>
