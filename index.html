@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Countries</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -21,277 +21,63 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/countries.css" />
 
     <meta name="theme-color" content="#fafafa" />
   </head>
   <body>
-    <!--filter buttons -->
-    <div class="row">
-      <div
-        class="col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap"
-      >
-        <a
-          href="#"
-          class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
-          onclick="all()"
-          id="allC"
-        >
-          all countries</a
-        >
-        <a
-          href="#"
-          class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
-          onclick="germany"
-          >germany</a
-        >
-        <a
-          href="#"
-          class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
-          onclick="nitherland"
-          >nitherland</a
-        >
-        <a
-          href="#"
-          class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
-          onclick="france"
-          >france</a
-        >
-        <a
-          href="#"
-          class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
-          onclick="czech"
-          >czech-republic</a
-        >
+    <header>
+      <ul>
+        <li class="active">all countries</li>
+        <li>germany</li>
+        <li>nitherland</li>
+        <li>france</li>
+        <li>czech republic</li>
+      </ul>
+    </header>
+    <section>
+      <!--Germany-->
+      <div class="every" data-id="germany">
+        <img src="./img/plaz.berlin.jpg" alt="" />
+        <h4>Alexanderplatz</h4>
       </div>
-    </div>
-    <!-- search box -->
-    <div class="row">
-      <div class="col-10 mx-auto col-md-6">
-        <form>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text search-box" id="search-icon"
-                ><i class="fas fa-search"></i
-              ></span>
-            </div>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="item...."
-              id="search-item"
-            />
-            <button id="searchbtn">Search</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!--end of filter buttons -->
-    <div class="row" class="store-items" id="store-items">
-      <!-- single item -->
-      <div
-        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item"
-        id="germany"
-      >
-        <div class="card">
-          <div class="img-container">
-            <img
-              src="./img/plaz.berlin.jpg"
-              class="card-img-top store-img"
-              alt=""
-            />
-          </div>
-          <div class="card-body">
-            <div
-              class="card-text d-flex justify-content-between text-capitalize"
-            >
-              <h5>Alexanderplatz</h5>
-            </div>
-          </div>
-        </div>
-        <!-- end of card-->
-      </div>
-      <!-- single item -->
-      <div
-        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item"
-        id="nitherland"
-      >
-        <div class="card">
-          <div class="img-container">
-            <img
-              src="./img/amsterdam.jpg"
-              class="card-img-top store-img"
-              alt=""
-            />
-          </div>
-          <div class="card-body">
-            <div
-              class="card-text d-flex justify-content-between text-capitalize"
-            >
-              <h5>I am Amsterdam</h5>
-            </div>
-          </div>
-        </div>
-        <!-- end of card-->
-      </div>
-      <!-- single item -->
-      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item" id="france">
-        <div class="card">
-          <div class="img-container">
-            <img src="./img/paris.jpg" class="card-img-top store-img" alt="" />
-          </div>
-          <div class="card-body">
-            <div
-              class="card-text d-flex justify-content-between text-capitalize"
-            >
-              <h5>Eiffel-Tower</h5>
-            </div>
-          </div>
-        </div>
-        <!-- end of card-->
-      </div>
-      <!-- single item -->
-      <div
-        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item"
-        id="nitherland"
-      >
-        <div class="card">
-          <div class="img-container">
-            <img src="./img/tulips.jpg" class="card-img-top store-img" alt="" />
-          </div>
-          <div class="card-body">
-            <div
-              class="card-text d-flex justify-content-between text-capitalize"
-            >
-              <h5>Tulips</h5>
-            </div>
-          </div>
-        </div>
-        <!-- end of card-->
-      </div>
-      <!-- single item -->
-      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item" id="france">
-        <div class="card">
-          <div class="img-container">
-            <img
-              src="./img/Eiffel-Tower.jpg"
-              class="card-img-top store-img"
-              alt=""
-            />
-          </div>
-          <div class="card-body">
-            <div
-              class="card-text d-flex justify-content-between text-capitalize"
-            >
-              <h5>Paris</h5>
-            </div>
-          </div>
-        </div>
-        <!-- end of card-->
+      <div class="every" data-id="germany">
+        <img src="./img/berlin2.jpg" alt="" />
+        <h4>Berlin</h4>
       </div>
 
-      <!-- single item -->
-      <div
-        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item"
-        id="nitherland"
-      >
-        <div class="card">
-          <div class="img-container">
-            <img
-              src="./img/nitherland.jpg"
-              class="card-img-top store-img"
-              alt=""
-            />
-          </div>
-          <div class="card-body">
-            <div
-              class="card-text d-flex justify-content-between text-capitalize"
-            >
-              <h5>Netherlands Flag</h5>
-            </div>
-          </div>
-        </div>
-        <!-- end of card-->
+      <!--Nitherland-->
+      <div class="every" data-id="nitherland">
+        <img src="./img/nitherland.jpg" alt="" />
+        <h4>Netherlands Flag</h4>
       </div>
-
-      <!-- single item -->
-      <div
-        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item"
-        id="germany"
-      >
-        <div class="card">
-          <div class="img-container">
-            <img
-              src="./img/berlin2.jpg"
-              class="card-img-top store-img"
-              alt=""
-            />
-          </div>
-          <div class="card-body">
-            <div
-              class="card-text d-flex justify-content-between text-capitalize"
-            >
-              <h5>Berlin</h5>
-            </div>
-          </div>
-        </div>
-        <!-- end of card-->
+      <div class="every" data-id="nitherland">
+        <img src="./img/tulips.jpg" alt="" />
+        <h4>Tulips</h4>
       </div>
-
-      <!-- single item -->
-      <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item" id="france">
-        <div class="card">
-          <div class="img-container">
-            <img
-              src="./img/pyramide_du_louvre_de_nuit.jpg"
-              class="card-img-top store-img"
-              alt=""
-            />
-          </div>
-          <div class="card-body">
-            <div
-              class="card-text d-flex justify-content-between text-capitalize"
-            >
-              <h5>Pyramid in Louvre</h5>
-            </div>
-          </div>
-        </div>
-        <!-- end of card-->
+      <div class="every" data-id="nitherland">
+        <img src="./img/amsterdam.jpg" alt="" />
+        <h4>I am Amsterdam</h4>
       </div>
-
-      <!-- single item -->
-      <div
-        class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item"
-        id="czech-republic"
-      >
-        <div class="card">
-          <div class="img-container">
-            <img src="./img/prague.jpg" class="card-img-top store-img" alt="" />
-          </div>
-          <div class="card-body">
-            <div
-              class="card-text d-flex justify-content-between text-capitalize"
-            >
-              <h5>Prague</h5>
-            </div>
-          </div>
-        </div>
-        <!-- end of card-->
+      <!--France-->
+      <div class="every" data-id="france">
+        <img src="./img/Eiffel-Tower.jpg" alt="" />
+        <h4>Eiffel-Tower</h4>
       </div>
-      <!--end of single store item-->
-    </div>
-
-    <!-- modal-container -->
-    <div id="container-fluid" class="container-fluid">
-      <div class="row lightbox-container align-items-center">
-        <div class="col-10 col-md-10 mx-auto text-right lightbox-holder">
-          <span class="lightbox-close">&times;</span>
-          <div class="lightbox-item"></div>
-          <span class="lightbox-control btnLeft"></span>
-          <span class="lightbox-control btnRight"></span>
-        </div>
+      <div class="every" data-id="france">
+        <img src="./img/pyramide_du_louvre_de_nuit.jpg" alt="" />
+        <h4>Pyramid in Louvre</h4>
       </div>
-    </div>
-    <script src="./js/main-gallery.js"></script>
+      <div class="every" data-id="france">
+        <img src="./img/paris.jpg" alt="" />
+        <h4>Paris</h4>
+      </div>
+      <!--Czech Republic-->
+      <div class="every" data-id="czech republic">
+        <img src="./img/prague.jpg" alt="" />
+        <h4>Prague</h4>
+      </div>
+    </section>
+    <script src="./js/countries.js"></script>
   </body>
 </html>

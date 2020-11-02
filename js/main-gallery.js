@@ -70,5 +70,9 @@
 })();
 
 //Filter Selection all countries buttons
-let allB = document.getElementById("allC");
-let allI = document.querySelectorAll(".store-item");
+// let allB = document.getElementById("allC");
+// let allI = document.querySelectorAll(".store-item");
+
+function showAll() {
+  document.querySelectorAll(".store-item").style.display = "none";
+}
