@@ -20,7 +20,7 @@
 }
 .lightbox-item {
   min-height: 80vh;
-  background: url("../img/deutsh.jpg") center/cover fixed no-repeat;
+  background: url("../img/plaz.berlin.jpg") center/cover fixed no-repeat;
   border-radius: 0.3rem;
 }
 .lightbox-close {

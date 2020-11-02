@@ -18,6 +18,7 @@
   let imagesList = [];
   // set up a counter to run through the list od images
   let imageCounter = 0;
+  //button
 
   // use a forEach loop to get a copy of all the images and push into an array of items
   images.forEach(function (image) {
@@ -67,3 +68,7 @@
     lightBox.classList.remove("show");
   });
 })();
+
+//Filter Selection all countries buttons
+let allB = document.getElementById("allC");
+let allI = document.querySelectorAll(".store-item");
