@@ -20,6 +20,10 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/countries.css" />
 
@@ -27,57 +31,92 @@
   </head>
   <body>
     <header>
-      <ul>
-        <li class="active">all countries</li>
-        <li>germany</li>
-        <li>nitherland</li>
-        <li>france</li>
-        <li>czech republic</li>
-      </ul>
+      <div class="top">
+        <ul>
+          <li class="active">all countries</li>
+          <li>germany</li>
+          <li>nitherland</li>
+          <li>france</li>
+          <li>czech republic</li>
+        </ul>
+      </div>
+
+      <input
+        type="text"
+        id="myInput"
+        onkeyup="myFunction()"
+        placeholder="Search for names.."
+        title="Type in a name"
+      />
     </header>
     <section>
+      <!-- search box -->
+
       <!--Germany-->
+
       <div class="every" data-id="germany">
         <img src="./img/plaz.berlin.jpg" alt="" />
-        <h4>Alexanderplatz</h4>
+
+        <li><a href="#">Alexanderplatz</a></li>
       </div>
       <div class="every" data-id="germany">
         <img src="./img/berlin2.jpg" alt="" />
-        <h4>Berlin</h4>
+
+        <li><a href="#">Berlin</a></li>
       </div>
 
       <!--Nitherland-->
       <div class="every" data-id="nitherland">
         <img src="./img/nitherland.jpg" alt="" />
-        <h4>Netherlands Flag</h4>
+
+        <li><a href="#">Nitherlands Flag</a></li>
       </div>
       <div class="every" data-id="nitherland">
         <img src="./img/tulips.jpg" alt="" />
-        <h4>Tulips</h4>
+        <li><a href="#">Tulips</a></li>
       </div>
       <div class="every" data-id="nitherland">
         <img src="./img/amsterdam.jpg" alt="" />
-        <h4>I am Amsterdam</h4>
+        <li><a href="#">I am Amsterdam</a></li>
       </div>
       <!--France-->
       <div class="every" data-id="france">
         <img src="./img/Eiffel-Tower.jpg" alt="" />
-        <h4>Eiffel-Tower</h4>
+        <li><a href="#">Eiffel-Tower</a></li>
       </div>
       <div class="every" data-id="france">
         <img src="./img/pyramide_du_louvre_de_nuit.jpg" alt="" />
-        <h4>Pyramid in Louvre</h4>
+        <li><a href="#">Pyramide in Louvre</a></li>
       </div>
       <div class="every" data-id="france">
         <img src="./img/paris.jpg" alt="" />
-        <h4>Paris</h4>
+
+        <li><a href="#">Paris</a></li>
       </div>
       <!--Czech Republic-->
       <div class="every" data-id="czech republic">
         <img src="./img/prague.jpg" alt="" />
-        <h4>Prague</h4>
+        <li><a href="#">Prague</a></li>
       </div>
     </section>
     <script src="./js/countries.js"></script>
+    <script>
+      function myFunction() {
+        var input, filter, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementsByClassName("every");
+        li = div.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+    </script>
   </body>
 </html>

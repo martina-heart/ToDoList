@@ -1,3 +1,4 @@
+//Buttons//
 const buttons = document.querySelectorAll("li");
 const section = document.querySelectorAll(".every");
 
@@ -19,3 +20,5 @@ buttons.forEach((item) => {
     });
   });
 });
+
+//Serach//

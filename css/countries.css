@@ -10,17 +10,17 @@ body {
   background: #eee;
 }
 
-header {
+.top {
   min-width: 80px;
   cursor: pointer;
   color: #444;
 }
 
-ul {
+.top ul {
   float: right;
 }
 
-ul li {
+.top ul li {
   list-style: none;
   display: inline-block;
   font-size: 1.5rem;
@@ -32,7 +32,7 @@ ul li {
   margin-top: 20px;
 }
 
-ul li:hover,
+.top ul li:hover,
 .active {
   background: palevioletred;
 }
@@ -69,4 +69,30 @@ section {
   letter-spacing: 3px;
   text-transform: uppercase;
   line-height: 80px;
+}
+
+#myInput {
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+section li a {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  list-style: none;
+}
+
+section li a:hover {
+  background-color: #eee;
 }
