@@ -1,72 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="apple-touch-icon" href="icon.png" />
-    <!-- Place favicon.ico in the root directory -->
-
-    <link rel="stylesheet" href="css/normalize.css" />
-    <!-- new-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Länder</title>
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/main.css" />
-    <!-- <link rel="stylesheet" href="./css/countries.css" /> -->
-
-    <meta name="theme-color" content="#fafafa" />
+    <link rel="stylesheet" href="./css/countries.css" />
   </head>
+
   <body>
     <header>
-      <!--filter buttons -->
-
-      <div class="row">
-        <div
-          class="col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap"
+      <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')">
+          Show all
+        </button>
+        <button
+          class="btn"
+          onclick="filterSelection('germany')"
+          style="background-color: red"
         >
-          <a
-            href="#"
-            class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
-            data-filter="all"
-            onclick="showAll('all')"
-            >All Countries</a
-          >
-          <a
-            href="#"
-            class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
-            data-filter="germany"
-            onclick="showAll('germany')"
-            >Germany</a
-          >
-          <a
-            href="#"
-            class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
-            data-filter="nitherlands"
-            onclick="showAll('nitherlands')"
-            >Nitherlands</a
-          >
-          <a
-            href="#"
-            class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
-            data-filter="France"
-            onclick="showAll('France')"
-            >France</a
-          >
-        </div>
+          Germany
+        </button>
+        <button
+          class="btn"
+          onclick="filterSelection('france')"
+          style="background-color: royalblue"
+        >
+          France
+        </button>
+        <button
+          class="btn"
+          onclick="filterSelection('nitherlands')"
+          style="background-color: yellow"
+        >
+          Nitherlands
+        </button>
       </div>
+
       <!-- search box -->
       <div class="row">
         <div class="col-10 mx-auto col-md-6">
@@ -88,112 +61,96 @@
           </form>
         </div>
       </div>
+      <!--end of filter buttons -->
     </header>
-    <!--end of filter buttons -->
-    <section>
-      <div class="store-items" id="store-items">
-        <!-- single item -->
-        <div class="store-item" data-item="France">
-          <div class="card">
+    <main>
+      <!-- Germany -->
+      <div class="row">
+        <div class="column germany">
+          <div class="content">
+            <img src="./img/plaz.berlin.jpg" alt="Alexanderplaz" />
+            <h4>Germany</h4>
+            <p>Alexanderplaz</p>
+          </div>
+        </div>
+        <div class="column germany">
+          <div class="content">
+            <img src="./img/berlin2.jpg" alt="Berlin" />
+            <h4>Germany</h4>
+            <p>Berlin</p>
+          </div>
+        </div>
+        <div class="column germany">
+          <div class="content">
+            <img src="./img/deutsh.jpg" alt="German Flag" />
+            <h4>Germany</h4>
+            <p>German Flag</p>
+          </div>
+        </div>
+        <!-- France -->
+        <div class="column france">
+          <div class="content">
+            <img src="./img/Eiffel-Tower.jpg" alt="Seine river in Paris" />
+            <h4>France</h4>
+            <p>Seine river in Paris</p>
+          </div>
+        </div>
+        <div class="column france">
+          <div class="content">
             <img
               src="./img/pyramide_du_louvre_de_nuit.jpg"
-              class="card-img-top store-img France"
               alt="Pyramide in Louvre"
             />
-            <h4>Pyramide in Louvre</h4>
+            <h4>France</h4>
+            <p>Pyramide in Louvre</p>
           </div>
         </div>
-
-        <!-- single item -->
-        <div class="store-item" data-item="nitherlands">
-          <div class="card">
-            <img
-              src="./img/nitherland.jpg"
-              class="card-img-top store-img nitherlands"
-              alt="Nitherlands Flag"
-            />
-            <h5>Nitherlands Flag</h5>
+        <div class="column france">
+          <div class="content">
+            <img src="./img/paris.jpg" alt="Eiffel-Tower" />
+            <h4>France</h4>
+            <p>Eiffel-Tower</p>
           </div>
         </div>
-
-        <!-- single item -->
-        <div class="store-item" data-item="France">
-          <div class="card">
-            <img
-              src="./img/paris.jpg"
-              class="card-img-top store-img France"
-              alt="paris"
-            />
-            <h5>Paris</h5>
+        <!-- Nitherlands -->
+        <div class="column nitherlands">
+          <div class="content">
+            <img src="./img/amsterdam.jpg" alt="A am Amsterdam" />
+            <h4>Nitherlands</h4>
+            <p>A am Amsterdam</p>
           </div>
         </div>
-
-        <!-- single item -->
-        <div class="store-item" data-item="germany">
-          <div class="card">
-            <img
-              src="./img/berlin2.jpg"
-              class="card-img-top store-img germany"
-              alt="berlin"
-            />
-            <h5>Berlin</h5>
+        <div class="column nitherlands">
+          <div class="content">
+            <img src="./img/tulips.jpg" alt="Tulips" />
+            <h4>Nitherlands</h4>
+            <p>Tulips</p>
           </div>
         </div>
-
-        <!-- single item -->
-        <div class="store-item" data-item="nitherlands">
-          <div class="card">
-            <img
-              src="./img/amsterdam.jpg"
-              class="card-img-top store-img nitherlands"
-              alt="I am Amsetrdam"
-            />
-            <h5>I am Amsterdam</h5>
+        <div class="column nitherlands">
+          <div class="content">
+            <img src="./img/nitherland.jpg" alt="Nitherlands Flag" />
+            <h4>Nitherlands</h4>
+            <p>Nitherlands Flag</p>
           </div>
         </div>
-
-        <!-- single item -->
-        <div class="store-item" data-item="germany">
-          <div class="card">
-            <img
-              src="./img/plaz.berlin.jpg"
-              class="card-img-top store-img germany"
-              alt="Alexanderplaz"
-            />
-            <h5>Alexanderplaz</h5>
-          </div>
-        </div>
+        <!-- END GRID -->
       </div>
-
-      <!-- modal-container -->
-      <div id="container-fluid" class="container-fluid">
-        <div class="row lightbox-container align-items-center">
-          <div class="col-10 col-md-10 mx-auto text-right lightbox-holder">
-            <span class="lightbox-close">&times;</span>
-            <div class="lightbox-item"></div>
-            <span class="lightbox-control btnLeft"></span>
-            <span class="lightbox-control btnRight"></span>
-          </div>
-        </div>
-      </div>
-    </section>
+    </main>
     <script>
-      showAll("all");
-
-      function showAll(c) {
-        var site;
-
-        site = document.getElementsByClassName("store-img");
-        console.log(site);
+      //Buttons
+      filterSelection("all");
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
         if (c == "all") c = "";
-        for (var i = 0; i < site.length; i++) {
-          remove(site[i], "show");
-          if (site[i].className.indexOf(c) > -1) {
-            add(site[i], "show");
-          }
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
         }
       }
-      function add(element, name) {
+
+      function w3AddClass(element, name) {
         var i, arr1, arr2;
         arr1 = element.className.split(" ");
         arr2 = name.split(" ");
@@ -203,7 +160,8 @@
           }
         }
       }
-      function remove(element, name) {
+
+      function w3RemoveClass(element, name) {
         var i, arr1, arr2;
         arr1 = element.className.split(" ");
         arr2 = name.split(" ");
@@ -215,19 +173,30 @@
         element.className = arr1.join(" ");
       }
 
+      // Add active class to the current button
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+
+      //Search active
       function searchFunction() {
         var input, zbor, imgs;
         input = document.getElementById("search-item");
         zbor = input.value.toUpperCase();
-        imgs = document.querySelectorAll(".store-item");
+        imgs = document.getElementsByTagName("img");
         for (var i = 0; i < imgs.length; i++) {
           if (imgs[i].alt.toUpperCase().indexOf(zbor) > -1) {
-            imgs[i].style.visibility = "visible";
+            imgs[i].style.display = "block";
           } else {
-            imgs[i].style.visibility = "hidden";
+            imgs[i].style.display = "none";
           }
         }
-        console.log(imgs);
       }
     </script>
     <script src="./js/main-gallery.js"></script>
