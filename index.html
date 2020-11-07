@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Countries</title>
+    <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -16,107 +16,220 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css" />
+    <!-- new-->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/countries.css" />
+    <!-- <link rel="stylesheet" href="./css/countries.css" /> -->
 
     <meta name="theme-color" content="#fafafa" />
   </head>
   <body>
     <header>
-      <div class="top">
-        <ul>
-          <li class="active">all countries</li>
-          <li>germany</li>
-          <li>nitherland</li>
-          <li>france</li>
-          <li>czech republic</li>
-        </ul>
-      </div>
+      <!--filter buttons -->
 
-      <input
-        type="text"
-        id="myInput"
-        onkeyup="myFunction()"
-        placeholder="Search for names.."
-        title="Type in a name"
-      />
-    </header>
-    <section>
+      <div class="row">
+        <div
+          class="col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap"
+        >
+          <a
+            href="#"
+            class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
+            data-filter="all"
+            onclick="showAll('all')"
+            >All Countries</a
+          >
+          <a
+            href="#"
+            class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
+            data-filter="germany"
+            onclick="showAll('germany')"
+            >Germany</a
+          >
+          <a
+            href="#"
+            class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
+            data-filter="nitherlands"
+            onclick="showAll('nitherlands')"
+            >Nitherlands</a
+          >
+          <a
+            href="#"
+            class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
+            data-filter="France"
+            onclick="showAll('France')"
+            >France</a
+          >
+        </div>
+      </div>
       <!-- search box -->
+      <div class="row">
+        <div class="col-10 mx-auto col-md-6">
+          <form>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text search-box" id="search-icon"
+                  ><i class="fas fa-search"></i
+                ></span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="item...."
+                id="search-item"
+                onkeyup="searchFunction()"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+    <!--end of filter buttons -->
+    <section>
+      <div class="store-items" id="store-items">
+        <!-- single item -->
+        <div class="store-item" data-item="France">
+          <div class="card">
+            <img
+              src="./img/pyramide_du_louvre_de_nuit.jpg"
+              class="card-img-top store-img France"
+              alt="Pyramide in Louvre"
+            />
+            <h4>Pyramide in Louvre</h4>
+          </div>
+        </div>
 
-      <!--Germany-->
+        <!-- single item -->
+        <div class="store-item" data-item="nitherlands">
+          <div class="card">
+            <img
+              src="./img/nitherland.jpg"
+              class="card-img-top store-img nitherlands"
+              alt="Nitherlands Flag"
+            />
+            <h5>Nitherlands Flag</h5>
+          </div>
+        </div>
 
-      <div class="every" data-id="germany">
-        <img src="./img/plaz.berlin.jpg" alt="" />
+        <!-- single item -->
+        <div class="store-item" data-item="France">
+          <div class="card">
+            <img
+              src="./img/paris.jpg"
+              class="card-img-top store-img France"
+              alt="paris"
+            />
+            <h5>Paris</h5>
+          </div>
+        </div>
 
-        <li><a href="#">Alexanderplatz</a></li>
-      </div>
-      <div class="every" data-id="germany">
-        <img src="./img/berlin2.jpg" alt="" />
+        <!-- single item -->
+        <div class="store-item" data-item="germany">
+          <div class="card">
+            <img
+              src="./img/berlin2.jpg"
+              class="card-img-top store-img germany"
+              alt="berlin"
+            />
+            <h5>Berlin</h5>
+          </div>
+        </div>
 
-        <li><a href="#">Berlin</a></li>
+        <!-- single item -->
+        <div class="store-item" data-item="nitherlands">
+          <div class="card">
+            <img
+              src="./img/amsterdam.jpg"
+              class="card-img-top store-img nitherlands"
+              alt="I am Amsetrdam"
+            />
+            <h5>I am Amsterdam</h5>
+          </div>
+        </div>
+
+        <!-- single item -->
+        <div class="store-item" data-item="germany">
+          <div class="card">
+            <img
+              src="./img/plaz.berlin.jpg"
+              class="card-img-top store-img germany"
+              alt="Alexanderplaz"
+            />
+            <h5>Alexanderplaz</h5>
+          </div>
+        </div>
       </div>
 
-      <!--Nitherland-->
-      <div class="every" data-id="nitherland">
-        <img src="./img/nitherland.jpg" alt="" />
-
-        <li><a href="#">Nitherlands Flag</a></li>
-      </div>
-      <div class="every" data-id="nitherland">
-        <img src="./img/tulips.jpg" alt="" />
-        <li><a href="#">Tulips</a></li>
-      </div>
-      <div class="every" data-id="nitherland">
-        <img src="./img/amsterdam.jpg" alt="" />
-        <li><a href="#">I am Amsterdam</a></li>
-      </div>
-      <!--France-->
-      <div class="every" data-id="france">
-        <img src="./img/Eiffel-Tower.jpg" alt="" />
-        <li><a href="#">Eiffel-Tower</a></li>
-      </div>
-      <div class="every" data-id="france">
-        <img src="./img/pyramide_du_louvre_de_nuit.jpg" alt="" />
-        <li><a href="#">Pyramide in Louvre</a></li>
-      </div>
-      <div class="every" data-id="france">
-        <img src="./img/paris.jpg" alt="" />
-
-        <li><a href="#">Paris</a></li>
-      </div>
-      <!--Czech Republic-->
-      <div class="every" data-id="czech republic">
-        <img src="./img/prague.jpg" alt="" />
-        <li><a href="#">Prague</a></li>
+      <!-- modal-container -->
+      <div id="container-fluid" class="container-fluid">
+        <div class="row lightbox-container align-items-center">
+          <div class="col-10 col-md-10 mx-auto text-right lightbox-holder">
+            <span class="lightbox-close">&times;</span>
+            <div class="lightbox-item"></div>
+            <span class="lightbox-control btnLeft"></span>
+            <span class="lightbox-control btnRight"></span>
+          </div>
+        </div>
       </div>
     </section>
-    <script src="./js/countries.js"></script>
     <script>
-      function myFunction() {
-        var input, filter, li, a, i, txtValue;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        div = document.getElementsByClassName("every");
-        li = div.getElementsByTagName("li");
-        for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-          } else {
-            li[i].style.display = "none";
+      showAll("all");
+
+      function showAll(c) {
+        var site;
+
+        site = document.getElementsByClassName("store-img");
+        console.log(site);
+        if (c == "all") c = "";
+        for (var i = 0; i < site.length; i++) {
+          remove(site[i], "show");
+          if (site[i].className.indexOf(c) > -1) {
+            add(site[i], "show");
           }
         }
       }
+      function add(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+          }
+        }
+      }
+      function remove(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+      function searchFunction() {
+        var input, zbor, imgs;
+        input = document.getElementById("search-item");
+        zbor = input.value.toUpperCase();
+        imgs = document.querySelectorAll(".store-item");
+        for (var i = 0; i < imgs.length; i++) {
+          if (imgs[i].alt.toUpperCase().indexOf(zbor) > -1) {
+            imgs[i].style.visibility = "visible";
+          } else {
+            imgs[i].style.visibility = "hidden";
+          }
+        }
+        console.log(imgs);
+      }
     </script>
+    <script src="./js/main-gallery.js"></script>
   </body>
 </html>

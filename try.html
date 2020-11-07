@@ -1,0 +1,69 @@
+<div class="top">
+  <ul>
+    <li class="active">all countries</li>
+    <li>germany</li>
+    <li>nitherland</li>
+    <li>france</li>
+    <li>czech republic</li>
+  </ul>
+</div>
+
+<section>
+  <!--Germany-->
+
+  <div class="every" data-id="germany">
+    <img src="./img/plaz.berlin.jpg" alt="Alexanderplatz" />
+
+    <h4>Alexanderplatz</h4>
+
+    <img src="./img/berlin2.jpg" alt="Berlin" />
+
+    <h4>Berlin</h4>
+  </div>
+
+  <!--Nitherland-->
+  <div class="every" data-id="nitherland">
+    <img src="./img/nitherland.jpg" alt="Nitherlands Flag" />
+
+    <h4>Nitherlands Flag</h4>
+
+    <img src="./img/tulips.jpg" alt="Tulips" />
+    <h4>Tulips</h4>
+
+    <img src="./img/amsterdam.jpg" alt="I am Amsterdam" />
+    <h4>I am Amsterdam</h4>
+  </div>
+  <!--France-->
+  <div class="every" data-id="france">
+    <img src="./img/Eiffel-Tower.jpg" alt="Eiffel-Tower" />
+    <h4>Eiffel-Tower</h4>
+
+    <img src="./img/pyramide_du_louvre_de_nuit.jpg" alt="Pyramide in Louvre" />
+    <h4>Pyramide in Louvre</h4>
+
+    <img src="./img/paris.jpg" alt="Paris" />
+
+    <h4>Paris</h4>
+  </div>
+  <!--Czech Republic-->
+  <div class="every" data-id="czech republic">
+    <img src="./img/prague.jpg" alt="Prague" />
+    <h4>Prague</h4>
+  </div>
+</section>
+<script src="./js/countries.js"></script>
+<script>
+  function SearchFunction() {
+    var input, land, imgs;
+    input = document.getElementById("search-item");
+    land = input.value.toUpperCase();
+    imgs = document.getElementsByTagName("img");
+    for (var i = o; i < imgs.length; i++) {
+      if (imgs[i].alt.toUpperCase().indexOf(land) > -1) {
+        imgs[i].style.display = "block";
+      } else {
+        imgs[i].style.display = "none";
+      }
+    }
+  }
+</script>
